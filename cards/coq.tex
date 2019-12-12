@@ -1,0 +1,158 @@
+\documentclass[avery5871, grid]{flashcards} % grid, frame
+
+\usepackage{}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{cancel}
+\usepackage{verbatim}
+\usepackage{amsrefs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tikz-cd}
+%\usepackage[pdf]{pstricks}
+\usepackage{braket}
+\usetikzlibrary{cd}
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = red
+}
+%\usepackage{adjustbox}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{adjustbox}
+\usepackage{changepage}
+\usepackage{textcomp}
+\usepackage{listings}
+
+
+
+% NEW COMMANDS
+\newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
+\newcommand{\norm}{\trianglelefteq}		% normal subgroup
+\newcommand{\propnorm}{\triangleleft}		% proper normal subgroup
+\newcommand{\semi}{\rtimes}				% semidirect product
+\newcommand{\sub}{\subseteq}				% subset
+\newcommand{\nsub}{\nsubseteq}			% not subset
+\newcommand{\fa}{\forall}				% for all/any quantifier
+\newcommand{\R}{\mathbb{R}}				% reals
+\newcommand{\z}{\mathbb{Z}}				% integers
+\newcommand{\n}{\mathbb{N}}				% naturals
+\newcommand{\Q}{\mathbb{Q}}				% rationals
+\renewcommand{\c}{\mathbb{C}}				% complex numbers
+\newcommand{\F}{\mathbb{F}}				% finite field
+\newcommand{\bb}{\vspace{3mm}}			% skip line
+\newcommand{\heart}{\ensuremath\heartsuit}
+\newcommand{\mc}{\mathcal}				% calligraphic script
+\newcommand{\bee}{\begin{equation}\begin{aligned}}
+\newcommand{\eee}{\end{aligned}\end{equation}}
+%\newcommand{\nequiv}{\not\equiv}			% not congruent
+% linear combinations
+\newcommand{\lc}[2]{#1_1 + \cdots + #1_{#2}}
+\newcommand{\lcc}[3]{#1_1 #2_1 + \cdots + #1_{#3} #2_{#3}}
+\newcommand{\ten}{\otimes} 				% tensor product
+\newcommand{\fracc}{\frac}				% fraction autocomplete
+\newcommand{\tens}{\otimes}				% tensor product 
+\newcommand{\lpar}{\left(}				% scalable parentheses
+\newcommand{\rpar}{\right)}				
+\newcommand{\floor}{\lfloor}				% floor
+\newcommand{\Tau}{\mc{T}}				% capital Tau
+\newcommand{\rank}{\text{rank}}			% rank
+\DeclareMathOperator{\coker}{coker}		% cokernel
+\newcommand*\pp{{\rlap{\('\)}}}
+\newcommand{\counter}{\setcounter}			% counter autocomplete
+\newcommand{\gal}{\text{Gal}}				% Galois group
+\newcommand{\aut}{\text{Aut}}				% automorphism group
+\newcommand{\fix}{\text{Fix}}				% fixed field
+\newcommand{\qwe}{\sqrt}					% square root
+\newcommand{\wer}{\sqrt}					% n-th root
+\newcommand{\tilda}{\tilde}				% tilda
+\newcommand{\ds}{\displaystyle}			% displaystyle shortcut
+\newcommand{\absl}{\left|}				% scalable abs val bars
+\newcommand{\absr}{\right|}
+\newcommand{\lbrac}{\left[}				% scalable brackets
+\newcommand{\rbrac}{\right]}
+\newcommand{\dx}{\text{d}x}				% common differentials
+\newcommand{\dt}{\text{d}t}			
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% Arrow vector notation. 
+%\newcommand{\vecc}{\vec}
+% Bold vector notation. 
+\newcommand{\vecc}{\mathbf}
+\newcommand{\barr}{\bar}
+\newcommand{\D}{\partial}
+\newcommand{\comp}[1]{{#1}^\complement}	% set complement
+\newcommand{\textif}{\text{ if }}
+\newcommand{\indicator}{\mathds{1}}
+\newcommand{\cat}{\mathbf}
+\newcommand{\transpose}[1]{#1^{\mathsf{T}}}
+
+% RENEW COMMANDS
+\renewcommand{\leq}{\leqslant}			% prettier less equal
+\renewcommand{\geq}{\geqslant}			% prettier greater equal
+\renewcommand{\tt}{\text}				% text
+\renewcommand{\rm}{\normalshape}			% text inside math
+\renewcommand{\Re}{\operatorname{Re}}		% real part
+\renewcommand{\Im}{\operatorname{Im}}		% imaginary part
+\AtBeginDocument{\renewcommand{\bar}{\overline}}	% wider bar
+\renewcommand{\d}{\mathrm{d}}				% differential operator
+\renewcommand{\'}{\hspace{0.5mm}'}			% fix spacing for derivatives
+\renewcommand{\Set}[1]{\left\{\,#1\,\right\}}	% fix spacing for built-in \Set macro
+
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\inter}{\hspace{1mm}\small\circ}
+\newcommand{\interior}[1]{%
+  {\kern0pt#1}^{\hspace{0.5mm}\small\circ}%
+}
+\newcommand{\Nu}{\mathcal{V}}
+\newcommand{\hrul}{\vspace{3mm}\hrule\vspace{3mm}}
+\renewcommand{\d}{\hspace{0.3mm}\mathrm{d}}
+
+\let\temp\phi							% prettier phi
+\let\phi\varphi
+\let\phy\temp
+
+%\let\temp\epsilon						% prettier epsilon
+%\let\epsilon\varepsilon
+%\let\varepsilon\temp
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+
+
+
+
+
+\newcommand{\textapprox}{\raisebox{0.5ex}{\texttildelow}}
+\makeatletter
+\newenvironment{restoretext}%
+    {\@parboxrestore%
+     \begin{adjustwidth}{}{\leftmargin}%
+    }{\end{adjustwidth}
+     }
+\makeatother
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+
+
+
+\begin{document}
+
+
+%==========================================
+\cardfrontfoot{Coq}
+\begin{flashcard}[Tactic]{\small \texttt{intros}}
+\small
+
+.
+
+\end{flashcard}
+
+
+
+\end{document}
