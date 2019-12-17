@@ -146,13 +146,29 @@
 
 %==========================================
 \cardfrontfoot{Coq}
-\begin{flashcard}[Tactic]{\small \texttt{intros}}
-\small
-
-.
-
+\begin{flashcard}[Tactic]{If the subgoal starts with \texttt{forall <name>: <type>, ...} then use tactic...?}
+\texttt{intros <name>.}
 \end{flashcard}
 
+%==========================================
+\begin{flashcard}[Tactic]{If the subgoal starts with \texttt{<type> -> ...} then use tactic...?}
+\texttt{intros <name>.}
+\end{flashcard}
+
+%==========================================
+\begin{flashcard}[Tactic]{If the subgoal matches an hypothesis, use tactic...}
+\texttt{exact <hypothesis\_name>.}
+\end{flashcard}
+
+%==========================================
+\begin{flashcard}[Definition]{Context}
+All things we know to exist. These occupy the space above the \texttt{=====} line in coq.
+\end{flashcard}
+
+%==========================================
+\begin{flashcard}[Definition]{Hypothesis}
+A statement in the current \textbf{context}.
+\end{flashcard}
 
 
 \end{document}

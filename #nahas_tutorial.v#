@@ -256,6 +256,7 @@ in this case, assumed to be proven.  We named the new hypothesis "A",
 which is the same as the name of the variable removed from the
 subgoal.  You should always keep the same name, if possible.
 
+
 _RULE_: If the subgoal starts with "(forall <name> : <type>, ..."
      Then use tactic "intros <name>.".
 
